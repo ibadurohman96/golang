@@ -33,7 +33,11 @@ func main() {
 
 	router.GET("/", noteController.Index)
 	router.GET("/create", noteController.Create)
-	router.POST("/create", noteController.Create)
+	router.POST("/create", noteController.Store)
+	router.GET("/edit/:id", noteController.Edit)
+	router.POST("/edit/:id", noteController.Update)
+	router.POST("/done/:id", noteController.Done)
+	router.POST("/delete/:id", noteController.Delete)
 
 	port := ":8080"
 	fmt.Println("Aplikasi berjalan di http://localhost:8080")

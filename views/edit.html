@@ -1,5 +1,5 @@
 {{Define "title" .}}
-Tambah Task
+Ubah Task
 {{end}}
 
 {{Define "css" .}}
@@ -11,25 +11,25 @@ Tambah Task
 {{end}}
 
 {{Define "main" .}}
-<form action="" method="post">
-    <h1 class="display-6">Ubah Task</h1>
+<form action="/edit/{{.ID}}" method="post">
+    <h1 class="display-6">Create Task</h1>
 
     <div class="row mb-2">
         <div class="col-2" style="text-align: end">Task Detail</div>
         <div class="col-6">
-            <textarea name="content" placeholder="Masukkan Task"></textarea>
+            <textarea name="content" placeholder="Masukkan Task">{{.Note.Content}}</textarea>
         </div>    
     </div>
     <div class="row mb-2">
         <div class="col-2" style="text-align: end">Asignee</div>
         <div class="col-6">
-            <input class="form-control" type="text" name="assignee" placeholder="Masukkan Penerima">
+            <input class="form-control" type="text" name="assignee" placeholder="Masukkan Penerima" value="{{.Note.Assignee}}">
         </div>    
     </div>
     <div class="row mb-2">
         <div class="col-2" style="text-align: end">Deadline</div>
         <div class="col-6">
-            <input class="form-control" type="date" name="date">
+            <input class="form-control" type="date" name="date" value="{{.Note.Date}}">
         </div>    
     </div>
     <div class="row mb-2">
